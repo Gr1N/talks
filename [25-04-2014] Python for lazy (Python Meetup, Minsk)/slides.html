@@ -1,0 +1,894 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>Python for lazy</title>
+
+        <meta name="description" content="Python for lazy or how to make your life easier">
+        <meta name="author" content="Nikita Grishko">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <link rel="stylesheet" href="../bower_components/reveal.js/css/reveal.min.css">
+        <link rel="stylesheet" href="../bower_components/reveal.js/css/theme/default.css" id="theme">
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="../bower_components/reveal.js/lib/css/zenburn.css">
+
+        <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+        <script>
+            if( window.location.search.match( /print-pdf/gi ) ) {
+                var link = document.createElement( 'link' );
+                link.rel = 'stylesheet';
+                link.type = 'text/css';
+                link.href = 'css/print/pdf.css';
+                document.getElementsByTagName( 'head' )[0].appendChild( link );
+            }
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="../bower_components/reveal.js/lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="reveal">
+
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+    <section data-id="929cc9d2432d4bd4a0c3ed6cfc9458d4">
+        <h2>Python for lazy</h2>
+<p>or how to make your life easier</p>
+<p class="absolute-element" style="position: absolute; width: 266.35978835978835px; height: 86px; z-index: 5; left: 349px; top: 312px; max-height: none; max-width: none;">Nikita Grishko<br>
+        <a href="http://wargaming.net">Wargaming.net</a>
+    </p>
+<p class="absolute-element" style="position: absolute; width: 568px; height: 46px; z-index: 4; left: 199px; top: 411px;">
+    <a href="https://twitter.com/Gr1Nby">@Gr1Nby</a> /&nbsp;<a href="https://github.com/Gr1N">https://github.com/Gr1N</a>
+</p>
+</section>
+<section data-id="fb663cb8b34d45eb6dc1b14457ea6534">
+    <h2 class="absolute-element" style="position: absolute; width: 327px; height: 64px; z-index: 4; left: 322px; top: 288px;">Setup project</h2>
+</section>
+<section data-id="471ee4ad8c6f8d66aea8eb3a917c8b9e">
+    <h2>Start new project</h2>
+<div class="absolute-element" style="position: absolute; width: 824.2238325281803px; height: 380px; z-index: 4; left: 90px; top: 184px; max-height: none; max-width: none;">
+<pre><code>% mkdir awesome_project_43 &amp;&amp; cd ./<span>awesome_project_43</span></code><code>% mkdir awesomemodule</code><code>% touch awesomemodule/__init__.py</code><code>% cp ../<span>awesome_project_42/LISENSE ./</span></code><code><span style="font-family: monospace; font-size: 20.12882423400879px; font-style: normal; font-variant: normal;">% cp ../</span><span style="font-family: monospace; font-size: 20.12882423400879px; font-style: normal; font-variant: normal;">awesome_project_42/README.md ./</span><span><br></span></code><code><span style="font-family: monospace; font-size: 20.12882423400879px; font-style: normal; font-variant: normal;">% cp ../</span><span style="font-family: monospace; font-size: 20.12882423400879px; font-style: normal; font-variant: normal;">awesome_project_42/HISTORY.rst ./</span><span style="font-family: monospace; font-size: 20.12882423400879px; font-style: normal; font-variant: normal;"><br></span></code><code><span style="font-family: monospace; font-size: 20.12882423400879px; font-style: normal; font-variant: normal;">% cp ../</span><span style="font-family: monospace; font-size: 20.12882423400879px; font-style: normal; font-variant: normal;">awesome_project_42/setup.py ./</span><span style="font-family: monospace; font-size: 20.12882423400879px; font-style: normal; font-variant: normal;"><br></span></code><code><span style="font-family: monospace; font-size: 20.12882423400879px; font-style: normal; font-variant: normal;">% cp ../</span><span style="font-family: monospace; font-size: 20.12882423400879px; font-style: normal; font-variant: normal;">awesome_project_42/.gitignore ./</span><span style="font-family: monospace; font-size: 20.12882423400879px; font-style: normal; font-variant: normal;"><br></span></code><code><span style="font-family: monospace; font-size: 20.12882423400879px; font-style: normal; font-variant: normal;">% cp ../</span><span style="font-family: monospace; font-size: 20.12882423400879px; font-style: normal; font-variant: normal;">awesome_project_42/tox.ini ./</span><span style="font-family: monospace; font-size: 20.12882423400879px; font-style: normal; font-variant: normal;"><br></span></code><code><span style="font-family: monospace; font-size: 20.12882423400879px; font-style: normal; font-variant: normal;">...</span></code></pre>
+</div>
+</section>
+<section data-id="1a8a498a3ce783b3b10249675cff27a2">
+    <h2>Madness...</h2>
+<div class="absolute-element" style="position: absolute; width: 546px; height: 246px; z-index: 4; left: 227px; top: 215px;">
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/gr1n/images/360852/wat2.gif">
+    <br>
+</div>
+</section>
+<section data-id="e0dd1693608fbe944a8e4c4bd0858859">
+    <section data-id="f4fc8d3192c7667290c88139b9b189fd">
+        <h2>mr.bob</h2>
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/gr1n/images/356841/mr.bob-qr-code.gif">
+        <div>
+<a href="https://github.com/iElectric/mr.bob">https://github.com/iElectric/mr.bob</a>
+        <br>
+</div>
+    </section>
+    <section data-id="2c3ebc1372e778d57e5aa5d5bd6b9f22">
+        <h2>mr.bob</h2>
+<div class="absolute-element" style="position: absolute; width: 968px; height: 560.8309178743962px; z-index: 4; left: -5px; top: 88px; max-height: none; max-width: none;">
+<pre><code>% mkdir awesome_project_43 &amp;&amp; cd ./awesome_project_43
+% mrbob ../bobtemplates/gr1n/python_package
+
+...</code><code>
+--&gt; Dotted name of the package?: awesome_project_43
+--&gt; Name of the package referenced by installers?: awesome_project_43
+--&gt; Description of the package (visible on PyPI and similar):
+--&gt; Version? [0.1]:
+--&gt; Repository URL for the package:
+--&gt; URL for more information about the package:
+--&gt; What year was the project started? [2014]:
+--&gt; Do you want to support Python 2? [No]:
+--&gt; Author name?: Nikita Grishko
+--&gt; Author email address?:
+
+Generated file structure at ../awesome_project_43</code>    </pre>
+</div>
+</section>
+<section data-id="9a71fcd8d599ba505b2ad6eab90fa1c1">
+    <h2>mr.bob</h2>
+<div class="absolute-element" style="position: absolute; width: 966px; height: 410px; z-index: 4; left: -7px; top: 144px;">
+<pre><code>% cat .mrbob.ini
+[questions]
+package.dottedname.question = Dotted name of the package?
+package.dottedname.required = True
+
+package.name.question = Name of the package referenced by installers?
+package.name.required = True
+
+package.description.question = Description of the package (visible on PyPI and similar)
+
+package.version.question = Version?
+package.version.default = 0.1
+
+package.repository.question = Repository URL for the package
+...</code></pre>
+</div>
+</section>
+<section data-id="4f2edd8ba1ccf56bac8b9bb858a6c023">
+    <h2>mr.bob</h2>
+<div class="absolute-element" style="position: absolute; width: 933.3027375201289px; height: 344px; z-index: 4; left: 8px; top: 202px; max-height: none; max-width: none;">
+<pre><code>% ls -l
+total 64
+-rw-r--r--  1 nikitagrishko  staff    95 Apr 21 22:23 HISTORY.rst
+-rw-r--r--  1 nikitagrishko  staff  1081 Apr 21 22:23 LICENSE
+-rw-r--r--  1 nikitagrishko  staff    98 Apr 21 22:23 MANIFEST.in
+-rw-r--r--  1 nikitagrishko  staff   219 Apr 21 22:23 README.md
+-rw-r--r--  1 nikitagrishko  staff   215 Apr 21 22:23 README.rst
+drwxr-xr-x  3 nikitagrishko  staff   102 Apr 21 22:23 awesome_project_43
+-rw-r--r--  1 nikitagrishko  staff   283 Apr 20 22:38 setup.cfg
+-rw-r--r--  1 nikitagrishko  staff  1074 Apr 21 22:23 setup.py
+drwxr-xr-x  3 nikitagrishko  staff   102 Apr 21 22:23 tests
+-rw-r--r--  1 nikitagrishko  staff   137 Apr 21 22:23 tox.ini</code></pre>
+</div>
+</section>
+</section>
+<section data-id="900c01d85771cbc900eb93686ede5a7f">
+    <h2>Cookiecutter</h2>
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/gr1n/images/356899/cookiecutter-qr-code.gif">
+    <div>
+<a href="https://github.com/audreyr/cookiecutter">https://github.com/audreyr/cookiecutter</a>
+    <br>
+</div>
+</section>
+<section data-id="4ec6b3228d51fb7026b489fbaeb64d4c">
+    <h2>yeoman</h2>
+<div>
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/gr1n/images/356927/yeoman-qr-code.gif">
+    <br>
+</div>
+<div>
+<a href="http://yeoman.io/">http://yeoman.io/</a>
+    <br>
+</div>
+</section>
+<section data-id="38417a31b944e1987fc5d5741abe60fb">
+    <section data-id="d44c03d4762da84bf29ff34f31ccb25b">
+        <h2>Problem #1</h2>
+<div class="absolute-element" style="position: absolute; width: 944.9806763285025px; height: 294px; z-index: 4; left: 5px; top: 207px; max-height: none; max-width: none;">
+<pre><code>diff --git a/file1.py b/file1.py
+index b69df39..ba4e68d 100644
+--- a/file1.py
++++ b/file1.py
+@@ -1,2 +1,2 @@
+-def hello_world():
+-    print('Hello world')
++def hello_world():<font color="#a61c00" style="background-color: rgb(166, 28, 0);">   </font>
++    print('Hello world')<span style="background-color: rgb(166, 28, 0);">     </span><br></code>    </pre>
+</div>
+</section>
+<section data-id="388406a65b35856b6f615491bf3f51b4">
+    <h2>Problem #2</h2>
+<div class="absolute-element" style="position: absolute; width: 946.0772946859903px; height: 271px; z-index: 4; left: 4px; top: 219px; max-height: none; max-width: none;">
+<pre><code>diff --git b/file2.py a/file2.py
+index ba4e68d..5f12b05 100644
+--- b/file2.py
++++ a/file2.py
+@@ -1,2 +1,2 @@
+ def hello_world():
+-    print('Hello world')
++       print('Hello world')<br></code></pre>
+</div>
+</section>
+<section data-id="30a7884caaa8c4da4cf694e79a865575">
+    <h2>Problem #3</h2>
+<div class="absolute-element" style="position: absolute; width: 744px; height: 297px; z-index: 4; left: 113px; top: 174px;">
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/gr1n/images/357122/problem3.png">
+    <br>
+</div>
+</section>
+</section>
+<section data-id="d5233361339390da42fa2452abb38733">
+    <h2>Madness...</h2>
+<div class="absolute-element" style="position: absolute; width: 383px; height: 189px; z-index: 4; left: 294px; top: 246px;">
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/gr1n/images/364951/wut3.gif">
+    <br>
+</div>
+</section>
+<section data-id="489e2355bbfaa448401cdf1fa8490bc4">
+    <section data-id="08ad445bed9d8d7f42451496ca0693e1">
+        <h2>EditorConfig</h2>
+<div>
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/gr1n/images/356953/editorconfig-qr-code.gif">
+        <br>
+</div>
+<div>
+<a href="http://editorconfig.org/">http://editorconfig.org/</a>
+        <br>
+</div>
+    </section>
+    <section data-id="9cf0ae9a7db728211e4bef423012b1a8">
+        <h2>EditorConfig</h2>
+<div>
+<pre><code>% cat .editorconfig
+root = true
+
+[*]
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[**.{py,js}]
+indent_style = space
+indent_size = 4
+
+[**.ini]
+indent_style = space
+indent_size = 2</code>    </pre>
+</div>
+</section>
+<section data-id="b11548092a6b8f53cf61c48a02345384">
+    <h2>EditorConfig</h2>
+<p style="text-align: left; position: absolute; width: 128px; height: 46px; z-index: 4; left: 329px; top: 163px;" class="absolute-element">
+    <span>Plugins:</span>
+    <br>
+</p>
+<p style="text-align: left; position: absolute; width: 236px; height: 231px; z-index: 6; left: 370px; top: 232px;" class="absolute-element">
+</p>
+<ul class="absolute-element" style="position: absolute; width: 200px; height: 211px; z-index: 4; left: 371px; top: 242px;">
+<li>SublimeText</li>
+<li>PyCharm</li>
+<li>Vim</li>
+<li>Emacs</li>
+<li>...</li>
+</ul>
+<p>
+</p>
+<p>
+<br>
+</p>
+</section>
+</section>
+<section data-id="10609d8eefe449546fefd22dfe13a2e9">
+    <section data-id="1056f8d748d36fbceceebc2387d32cad">
+        <h2>Pylint</h2>
+<div>
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/gr1n/images/356971/pylint-qr-code.gif">
+        <br>
+</div>
+<div>
+<a href="http://www.pylint.org/">http://www.pylint.org/</a>
+        <br>
+</div>
+    </section>
+    <section data-id="509c4ab756d43d6d1d5a1e1a1a2b773f">
+        <h2>Pylint</h2>
+<div class="absolute-element" style="position: absolute; width: 952.2254428341384px; height: 350px; z-index: 4; left: 1px; top: 166px; max-height: none; max-width: none;">
+<pre><code>% pylint ./onepyssword
+No config file found, using default configuration
+************* Module onepyssword
+C:  1, 0: Missing module docstring (missing-docstring)
+************* Module onepyssword.app
+C: 35, 0: Line too long (85/80) (line-too-long)
+C:110, 0: Line too long (93/80) (line-too-long)
+C:  1, 0: Missing module docstring (missing-docstring)
+F:  9, 0: Unable to import 'copypaste' (import-error)
+C: 28, 4: Invalid constant name "NoSuchFileOrDirectoryException" (invalid-name)
+E: 28,37: Undefined variable 'FileNotFoundError' (undefined-variable)</code><code>...</code>    </pre>
+</div>
+</section>
+</section>
+<section data-id="0f53bcd814dbf4dc672586f86e52ad7c">
+    <section data-id="7d8f3087321959c77ddb68a13285cc4e">
+        <h2>flake8</h2>
+<div>
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/gr1n/images/356974/flake8-qr-code.gif">
+        <br>
+</div>
+<div>
+<a href="https://bitbucket.org/tarek/flake8/">https://bitbucket.org/tarek/flake8/</a>
+        <br>
+</div>
+    </section>
+    <section data-id="c40fe2d35213d43c4c9b791f4692df21">
+        <h2>flake8</h2>
+<div class="absolute-element" style="position: absolute; width: 917.2367149758454px; height: 410px; z-index: 4; left: 18px; top: 165px; max-height: none; max-width: none;">
+<pre><code>% cat setup.cfg
+[egg_info]
+tag_build =
+tag_date = 0
+
+[easy_install]
+zip_ok = false
+
+[flake8]
+ignore = E123,E127,E121
+# E123: closing bracket must match indent of starting bracket
+# E127 continuation line over-indented for visual indent
+# E121 continuation line indentation is not a multiple of four</code>    </pre>
+</div>
+</section>
+<section data-id="6272e8246008d098936d3beb860ff92c">
+    <h2>flake8</h2>
+<div class="absolute-element" style="position: absolute; width: 949.792270531401px; height: 430px; z-index: 4; left: 3px; top: 163px; max-height: none; max-width: none;">
+<pre><code>% flake8 ./onepyssword
+./onepyssword/app.py:28:38: F821 undefined name 'FileNotFoundError'
+./onepyssword/app.py:35:80: E501 line too long (85 &gt; 79 characters)
+./onepyssword/app.py:110:80: E501 line too long (93 &gt; 79 characters)
+./onepyssword/logic.py:30:80: E501 line too long (91 &gt; 79 characters)
+./onepyssword/logic.py:40:80: E501 line too long (87 &gt; 79 characters)
+./onepyssword/logic.py:64:80: E501 line too long (89 &gt; 79 characters)
+./onepyssword/logic.py:66:80: E501 line too long (87 &gt; 79 characters)
+./onepyssword/logic.py:73:80: E501 line too long (84 &gt; 79 characters)
+./onepyssword/logic.py:78:80: E501 line too long (97 &gt; 79 characters)
+./onepyssword/logic.py:117:80: E501 line too long (99 &gt; 79 characters)
+./onepyssword/logic.py:120:80: E501 line too long (107 &gt; 79 characters)
+./onepyssword/logic.py:131:80: E501 line too long (80 &gt; 79 characters)</code></pre>
+</div>
+</section>
+</section>
+<section data-id="1b95d7e29e7d981ca9e31632213dd2c4">
+    <h2 class="absolute-element" style="position: absolute; width: 318px; height: 64px; z-index: 4; left: 315px; top: 313px;">Environment</h2>
+</section>
+<section data-id="6862e773198b6ea2a418deebb215a92e">
+    <section data-id="01a849489d68c300da53d956ebd454d0">
+        <h2>virtualenv</h2>
+<div>
+        <br>
+    </div>
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/gr1n/images/356983/virtualenv-qr-code.gif">
+    <div>
+<a href="http://www.virtualenv.org/">http://www.virtualenv.org/</a>
+    <br>
+</div>
+</section>
+<section data-id="02a772fea62469c2b9033a606a1eddbe">
+    <h2>virtualenv</h2>
+<div class="absolute-element" style="position: absolute; width: 928.864734299517px; height: 125px; z-index: 4; left: 22px; top: 266px; max-height: none; max-width: none;">
+<pre><code>% virtualenv ENV</code><code>% source ENV/bin/activate</code></pre>
+</div>
+</section>
+<section data-id="34cb2b14a445f8a6b8978d7ffc3e832b">
+    <h2>venv (python&gt;=3.2)</h2>
+<div class="absolute-element" style="position: absolute; width: 946.1095008051531px; height: 119px; z-index: 4; left: 4px; top: 273px; max-height: none; max-width: none;">
+<pre><code>% pyvenv ENV</code><code>% source ENV/bin/activate</code></pre>
+</div>
+</section>
+</section>
+<section data-id="51854824675e485e483c2d9140626ca6">
+    <section data-id="1bc6e0ee1212d6f8e0039587acfb4413">
+        <h2>virtualenvwrapper</h2>
+<div>
+        <br>
+    </div>
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/gr1n/images/356998/virtualenvwrapper-qr-code.gif">
+    <div>
+<a href="http://virtualenvwrapper.readthedocs.org/">http://virtualenvwrapper.readthedocs.org/</a>
+    <br>
+</div>
+</section>
+<section data-id="cca59e411ffeb2eacb9d2fb921f710f4">
+    <h2>virtualenvwrapper</h2>
+<p style="text-align: left; ">Features:</p>
+<p style="text-align: left; ">
+</p>
+<ul>
+<li>Organizes all of your virtual environments in one place.<br>
+</li>
+<li>Wrappers for managing your virtual environments (create, delete, copy).<br>
+</li>
+<li>Use a single command to switch between environments.<br>
+</li>
+<li>...</li>
+</ul>
+<p>
+</p>
+</section>
+<section data-id="03d914b11178cfa3879dfa6922e59266">
+    <h2>virtualenvwrapper</h2>
+<div class="absolute-element" style="position: absolute; width: 945.4347826086957px; height: 410px; z-index: 4; left: 4px; top: 165px; max-height: none; max-width: none;">
+<pre><code>% pip install virtualenvwrapper
+...
+% export WORKON_HOME=~/Envs
+% mkdir -p $WORKON_HOME
+% source /usr/local/bin/virtualenvwrapper.sh
+% mkvirtualenv env1
+...
+(env1)% ls $WORKON_HOME
+env1 hook.log
+(env1)% pip install django
+...
+(env1)$ lssitepackages
+Django-1.1.1-py2.6.egg-info     easy-install.pth
+...<br></code></pre>
+</div>
+</section>
+<section data-id="9c03bd78121e91e3285733144dc6f4c4">
+    <h2>virtualenvwrapper</h2>
+<p style="text-align: left; position: absolute; width: 193px; height: 46px; z-index: 4; left: 269px; top: 144px;" class="absolute-element">Commands:</p>
+<p style="text-align: left; position: absolute; width: 277px; height: 417px; z-index: 4; left: 354px; top: 219px;" class="absolute-element">
+</p>
+<ul class="absolute-element" style="position: absolute; width: 240px; height: 380px; z-index: 4; left: 341px; top: 217px;">
+<li>mkvirtualenv</li>
+<li>mktmpenv</li>
+<li>lsvitualenv</li>
+<li>rmvirtualenv</li>
+<li>workon</li>
+<li>deactivate</li>
+<li>cdvirtualenv</li>
+<li>cdsitepackages</li>
+<li>...</li>
+</ul>
+<p>
+</p>
+</section>
+</section>
+<section data-id="930a2954bea5d12d5102c37d114a356a">
+    <section data-id="acfdfd9ca8200ae9bcc8936349f16c82">
+        <h2>pyenv</h2>
+<div>
+        <br>
+    </div>
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/gr1n/images/357026/pyenv-qr-code.gif">
+    <div>
+<a href="https://github.com/yyuu/pyenv">https://github.com/yyuu/pyenv</a>
+    <br>
+</div>
+</section>
+<section data-id="137a9adacfde3d57bfa00f850ef607f1">
+    <h2>pyenv</h2>
+<div style="text-align: left; position: absolute; width: 193px; height: 46px; z-index: 4; left: 259px; top: 158px;" class="absolute-element">Commands:</div>
+<div style="text-align: left; position: absolute; width: 358px; height: 324px; z-index: 6; left: 300px; top: 221px;" class="absolute-element">
+    <ul>
+<li>local</li>
+<li>global</li>
+<li>shell</li>
+<li>install (104 versions)</li>
+<li>uninstall</li>
+<li>versions</li>
+<li>...</li>
+</ul>
+</div>
+<div style="text-align: left; ">
+<br>
+</div>
+</section>
+<section data-id="b8789be7e691a00af5048fc70a164725">
+    <h2>pyenv-virtualenv</h2>
+<div>
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/gr1n/images/357033/pyenv-virtualenv-qr-code.gif">
+    <br>
+</div>
+<div>
+<a href="https://github.com/yyuu/pyenv-virtualenv">https://github.com/yyuu/pyenv-virtualenv</a>
+    <br>
+</div>
+</section>
+</section>
+<section data-id="7c3e7e194ce826053be44b0f268fc650">
+    <h2 class="absolute-element" style="position: absolute; width: 329px; height: 64px; z-index: 4; left: 327px; top: 282px;">Development</h2>
+</section>
+<section data-id="5dc4fc77b3c777888dee5d4413d85919">
+    <section data-id="37f67024e919b2e8a35c640e5b5c938a">
+        <h2>Shell</h2>
+<div>
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/gr1n/images/357048/shell.png">
+        <br>
+</div>
+    </section>
+    <section data-id="d8b641690e7d46229bb668870de8f2a4">
+        <h2>IPython</h2>
+<div>
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/gr1n/images/357053/ipython-qr-code.gif">
+        <br>
+</div>
+<div>
+<a href="http://ipython.org/">http://ipython.org/</a>
+        <br>
+</div>
+    </section>
+    <section data-id="ff80c53eddb86715769ad0a149090f57">
+        <h2>bpython</h2>
+<div>
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/gr1n/images/357066/bpython-qr-code.gif">
+        <br>
+</div>
+<div>
+<a href="http://bpython-interpreter.org/">http://bpython-interpreter.org/</a>
+        <br>
+</div>
+    </section>
+    <section data-id="1bd5c054cfee1076c5052def73c81c90">
+        <h2>bpython</h2>
+<div style="text-align: left; ">Features:</div>
+<div style="text-align: left; ">
+        <ul>
+<li>
+<span>In-line syntax highlighting.</span>
+        <br>
+</li>
+<li>Readline-like autocomplete with suggestions displayed as you type.</li>
+<li>Expected parameter list for any Python function.</li>
+<li>Send the code you've entered off to a pastebin.</li>
+<li>Save the code you've entered to a file.</li>
+<li>Auto-indentation.</li>
+</ul>
+    </div>
+</section>
+<section data-id="fa55341daf8f5c90cf5456633e271f1d">
+    <h2>bpython</h2>
+<div class="absolute-element" style="position: absolute; width: 572px; height: 612.864734299517px; z-index: 4; left: 193px; top: 86px; max-height: none; max-width: none;">
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/gr1n/images/359131/bpython.png">
+    <br>
+</div>
+</section>
+</section>
+<section data-id="6d95092e40ba2da21f22fc0067b61c9c">
+    <section data-id="175070b7f1c35aeff00c389408f7d5f4">
+        <h2>Debugger</h2>
+<div>
+<pre><code>Python 3.4.0 (default, Apr  9 2014, 11:51:10)
+[GCC 4.2.1 Compatible Apple LLVM 5.1 (clang-503.0.38)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+&gt;&gt;&gt; def foo():
+...     import pdb; pdb.set_trace()
+...     for i in range(6):
+...         print(i)
+...
+&gt;&gt;&gt; foo()
+&gt; &lt;stdin&gt;(3)foo()
+(Pdb) s
+&gt; &lt;stdin&gt;(4)foo()
+(Pdb) s
+0
+&gt; &lt;stdin&gt;(3)foo()
+(Pdb) c
+2
+3
+4
+5</code>    </pre>
+</div>
+</section>
+<section data-id="618a80bcd5dcfb64f8a487db2f473775">
+    <h2>pudb</h2>
+<div>
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/gr1n/images/357082/pudb-qr-code.gif">
+    <br>
+</div>
+<div>
+<a href="https://github.com/inducer/pudb">https://github.com/inducer/pudb</a>
+    <br>
+</div>
+</section>
+<section data-id="c2697549de357f6b5a5c9b5eead7ec1e">
+    <h2>pudb</h2>
+<div style="text-align: left; ">Features:</div>
+<div style="text-align: left; ">
+    <ul>
+<li>
+<span>Syntax-highlighted source, the stack, breakpoints and variables are all visible at once and continuously updated.</span>
+    <br>
+</li>
+<li>Simple, keyboard-based navigation.</li>
+<li>Drop to a Python shell in the current environment by pressing "!".</li>
+<li>...</li>
+</ul>
+</div>
+</section>
+<section data-id="92e20392b1397e6f0862cd246cdfd47f">
+    <h2>pudb</h2>
+<div style="max-height: none; max-width: none;">
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/gr1n/images/357089/pudb.png">
+    <br>
+</div>
+</section>
+</section>
+<section data-id="585508e2e8555bf863d59d8213987df6">
+    <section data-id="bfa20b3a89155d17c3b5200def227437">
+        <h2>MailCatcher</h2>
+<div>
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/gr1n/images/357099/mailcatcher-qr-code.gif">
+        <br>
+</div>
+<div>
+<a href="http://mailcatcher.me/">http://mailcatcher.me/</a>
+        <br>
+</div>
+    </section>
+    <section data-id="a9efac7d603cae04d4a5e241cedc1d41">
+        <h2>MailCatcher</h2>
+<div class="absolute-element" style="position: absolute; width: 752px; height: 554.3623188405797px; z-index: 4; left: 115px; top: 115px; max-height: none; max-width: none;">
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/gr1n/images/357100/mailcatcher.png">
+        <br>
+</div>
+    </section>
+</section>
+<section data-id="dd60d9348921cdd30662c0022c9f31d6">
+    <h2 class="absolute-element" style="position: absolute; width: 180px; height: 64px; z-index: 4; left: 394px; top: 269px;">Testing</h2>
+</section>
+<section data-id="4e970dd7ee2d616b34d65a0105b4f594">
+    <section data-id="086902f68c32fa4e645242c4559c6576">
+        <h2>tox</h2>
+<div>
+        <br>
+    </div>
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/gr1n/images/357124/tox-qr-code.gif">
+    <div>
+<a href="http://tox.readthedocs.org/">http://tox.readthedocs.org/</a>
+    <br>
+</div>
+</section>
+<section data-id="e6d4e5324125dd1bf93c4f6418cd0cc5">
+    <h2>tox</h2>
+<div class="absolute-element" style="position: absolute; width: 946.1803542673108px; height: 294px; z-index: 4; left: 4px; top: 206px; max-height: none; max-width: none;">
+<pre><code>% cat tox.ini
+[tox]
+envlist = py27,py33,pypy
+
+[testenv]
+changedir = tests
+deps =
+  pytest
+commands =
+  py.test</code></pre>
+</div>
+</section>
+</section>
+<section data-id="85089d137824d6f4f8e0d9c8a18da591">
+    <section data-id="3a6b07ad5003d55c362daf4de8dda5f5">
+        <h2>pytest</h2>
+<div>
+        <br>
+    </div>
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/gr1n/images/357128/pytest-qr-code.gif">
+    <div>
+<a href="http://pytest.org/">http://pytest.org/</a>
+    <br>
+</div>
+</section>
+<section data-id="9337f4f719a8c66798e5341e8b4d322a">
+    <h2>pytest</h2>
+<p class="absolute-element" style="position: absolute; width: 730px; height: 46px; z-index: 4; left: 102px; top: 453px;">
+    <a href="http://pytest-plugs.herokuapp.com/">http://pytest-plugs.herokuapp.com/</a>
+    <br>
+</p>
+<div>
+<pre><code>% cat tox.ini
+[tox]
+envlist = py27,py33,pypy
+
+[testenv]
+changedir = tests
+deps =
+  pytest
+  pytest-pep8
+  pytest-cov
+commands =
+  py.test --pep8 --cov myproj</code></pre>
+</div>
+</section>
+</section>
+<section data-id="dd2914d66a5858dcf3428979388c1ddc">
+    <h2 class="absolute-element" style="position: absolute; width: 110px; height: 64px; z-index: 4; left: 423px; top: 263px;">PyPI</h2>
+</section>
+<section data-id="5cc7e8e951b51e9395952ebded60e33b">
+    <h2>Build and upload package</h2>
+<div>
+<pre><code>% vim setup.py</code><code>% vim HISTORY.rst</code><code>% git commit -a -m "Version 0.2"</code><code>% git push</code><code>% git tag -a v0.2 -m "Version 0.2"</code><code>% git push --tags</code><code>% python setup.py sdist upload</code><code>% vim setup.py</code><code>% vim HISTORY.rst</code><code>% git commit -a -m "Version 0.3.dev"</code><code>% git push</code><code>...</code></pre>
+</div>
+</section>
+<section data-id="48fa455c814145fe102e05479a47e482">
+    <h2>Madness...</h2>
+<div class="absolute-element" style="position: absolute; width: 449px; height: 276px; z-index: 4; left: 270px; top: 205px;">
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/gr1n/images/364958/wat4.gif">
+    <br>
+</div>
+</section>
+<section data-id="961e6e1876d6a191d8f133f0f3115e06">
+    <section data-id="9aed9db30d31e13b8e4fc44edd00916e">
+        <h2>check-manifest</h2>
+<div>
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/gr1n/images/357152/check-manifest-qr-code.gif">
+        <br>
+</div>
+<div>
+<a href="https://github.com/mgedmin/check-manifest">https://github.com/mgedmin/check-manifest</a>
+        <br>
+</div>
+    </section>
+    <section data-id="7e18682b18bf4ed269365ec5d87ea0a7">
+        <h2>check-manifest</h2>
+<div>
+<pre><code>% check-manifest -u
+listing source files under version control: 6 files and directories
+building an sdist: check-manifest-0.7.tar.gz: 4 files and directories
+files in version control do not match the sdist!
+missing from sdist:
+  tests.py
+  tox.ini
+suggested MANIFEST.in rules:
+  include *.py
+  include tox.ini
+updating MANIFEST.in
+% cat MANIFEST.in
+include *.rst
+
+# added by check_manifest.py
+include *.py
+include tox.ini<br></code>    </pre>
+</div>
+</section>
+</section>
+<section data-id="fcf0acc5103558b93d21f0cd29ecfe30">
+    <section data-id="19fded0ee7924dc5fa3aac5c633f5872">
+        <h2>zest.releaser</h2>
+<div>
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/gr1n/images/357155/zest-releaser-qr-code.gif">
+        <br>
+</div>
+<div>
+<a href="https://github.com/zestsoftware/zest.releaser">https://github.com/zestsoftware/zest.releaser</a>
+        <br>
+</div>
+    </section>
+    <section data-id="8a6f5decce08382ba479018e82bdab7c">
+        <h2>zest.releaser</h2>
+<div style="text-align: left; position: absolute; width: 193px; height: 46px; z-index: 4; left: 319px; top: 186px;" class="absolute-element">Commands:</div>
+<div style="text-align: left; position: absolute; width: 223px; height: 278px; z-index: 4; left: 392px; top: 262px;" class="absolute-element">
+        <ul>
+<li>prerelease</li>
+<li>release</li>
+<li>postrelease</li>
+<li>fullrelease</li>
+<li>longtest</li>
+<li>lasttagdiff</li>
+</ul>
+    </div>
+</section>
+</section>
+<section data-id="66e8e12e91edf633902cf87ec2eb582e">
+    <section data-id="8b9689a6a9cf0ab3871d4ac2b005dcf5">
+        <h2>pypispy</h2>
+<div>
+        <br>
+    </div>
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/gr1n/images/357165/pypispy-qr-code.gif">
+    <div>
+<a href="http://gr1n.github.io/pypispy/">http://gr1n.github.io/pypispy/</a>
+    <br>
+</div>
+</section>
+<section data-id="fe5d7a2653ec0980ebbc8fc0df275d13">
+    <h2>pypispy</h2>
+<div>
+<pre><code>% pypispy
+onepyssword
+--&gt; info:
+----&gt; version: 0.3.1
+----&gt; downloads:
+------&gt; last_day: 8
+------&gt; last_week: 120
+------&gt; last_month: 882
+
+copypaste
+--&gt; info:
+----&gt; version: 0.2
+----&gt; downloads:
+------&gt; last_day: 5
+------&gt; last_week: 61
+------&gt; last_month: 448<br></code></pre>
+</div>
+</section>
+</section>
+<section data-id="1cb2d9207ca92669bbd19692ceb05a42">
+    <h2>Links</h2>
+<div style="text-align: left; ">
+    <ul>
+<li>https://wiki.python.org/moin/DevelopmentTools<br>
+</li>
+<li>https://www.google.com/<br>
+</li>
+<li>https://github.com/<br>
+</li>
+</ul>
+</div>
+</section>
+<section data-id="d4b5ccf2f3d31f4a2e4dc4b51b0067e2">
+    <h2 class="absolute-element" style="position: absolute; width: 277px; height: 64px; z-index: 4; left: 357px; top: 281px;">Questions?</h2>
+</section>
+<section data-id="09256e6951329c2489478c2a99479ab8">
+    <h2>nose</h2>
+<div>
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/gr1n/images/357179/nose-qr-code.gif">
+    <br>
+</div>
+<div>
+<a href="https://nose.readthedocs.org/">https://nose.readthedocs.org/</a>
+    <br>
+</div>
+</section>
+<section data-id="d7c807d7f715105e20cabcb4c83ae089">
+    <h2>Fabric</h2>
+<div>
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/gr1n/images/357181/fabric-qr-code.gif">
+    <br>
+</div>
+<div>
+<a href="http://www.fabfile.org/">http://www.fabfile.org/</a>
+    <br>
+</div>
+</section>
+<section data-id="37e909d72ca4641e581eb6a7314ce6f6">
+    <h2>PyChecker</h2>
+<div>
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/gr1n/images/357184/pychecker-qr-code.gif">
+    <br>
+</div>
+<div>
+<a href="http://pychecker.sourceforge.net/">http://pychecker.sourceforge.net/</a>
+    <br>
+</div>
+</section>
+<section data-id="6b7669ca25febb4c6d7aa14e4859ba59">
+    <h2>Sphinx</h2>
+<div>
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/gr1n/images/357185/sphinx-qr-code.gif">
+    <br>
+</div>
+<div>
+<a href="http://sphinx-doc.org/">http://sphinx-doc.org/</a>
+    <br>
+</div>
+</section>
+<section data-id="3adb549ab5326ee7a7dc9d178eb88eee">
+    <h2>Grymt</h2>
+<div>
+    <br>
+</div>
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/gr1n/images/358761/grymt-qr-code.gif">
+<div>
+<a href="http://www.peterbe.com/plog/grymt">http://www.peterbe.com/plog/grymt</a>
+<br>
+</div>
+</section>
+</div>
+        </div>
+
+        <script src="../bower_components/reveal.js/lib/js/head.min.js"></script>
+        <script src="../bower_components/reveal.js/js/reveal.min.js"></script>
+
+        <script>
+
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+
+                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Parallax scrolling
+                // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+                // parallaxBackgroundSize: '2100px 900px',
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: '../bower_components/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: '../bower_components/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: '../bower_components/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: '../bower_components/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: '../bower_components/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: '../bower_components/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
+
+        </script>
+    </body>
+</html>
