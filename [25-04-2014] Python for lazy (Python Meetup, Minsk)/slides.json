@@ -3,5 +3,8 @@
     "description": "Python for lazy or how to make your life easier",
     "author": "Nikita Grishko <grin(dot)minsk(at)gmail(dot)com>",
     "date": "25-04-2014",
-    "place": "Python Meetup, Minsk"
+    "place": "Python Meetup, Minsk",
+    "links": [
+        "https://slides.com/gr1n/pythonforlazy/"
+    ]
 }
