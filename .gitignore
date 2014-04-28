@@ -1,0 +1,8 @@
+# Bower
+bower_components
+
+.idea
+*sublime*
+
+# Other
+.DS_Store
