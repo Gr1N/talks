@@ -1,9 +1,9 @@
 {
-    "name": "Python for lazy",
+    "title": "Python for lazy",
     "description": "Python for lazy or how to make your life easier",
-    "author": "Nikita Grishko <grin(dot)minsk(at)gmail(dot)com>",
-    "date": "25-04-2014",
-    "place": "Python Meetup, Minsk",
+    "author": "Nikita Grishko <gr1n(at)pm(dot)me",
+    "date": "2014-04-25",
+    "at": "Python Meetup, Minsk",
     "links": [
         "https://slides.com/gr1n/pythonforlazy/",
         "https://www.youtube.com/watch?v=8X-ic3Oo9gw"
