@@ -1,4 +1,3 @@
-presentations
-=============
+# talks
 
-My presentations from various meetups, conferences, etc.
+My talks from meetups and conferences.
