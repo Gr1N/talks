@@ -1,0 +1,16 @@
+{
+  "title": "Porting to Py3k",
+  "description": "Porting to Py3k",
+  "author": "Nikita Grishko <gr1n(at)pm(dot)me>",
+  "versions": [
+    {
+      "id": "0001",
+      "date": "2013-10-25",
+      "at": "Python Meetup, Minsk",
+      "links": [
+        "https://slides.com/gr1n/portingtopy3k/",
+        "https://www.youtube.com/watch?v=eG-IArHbexE"
+      ]
+    }
+  ]
+}

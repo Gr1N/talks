@@ -1,0 +1,15 @@
+{
+  "title": "Evolution of dependency management",
+  "description": null,
+  "author": "Nikita Grishko <gr1n(at)pm(dot)me>",
+  "versions": [
+    {
+      "id": "0001",
+      "date": "2019-02-18",
+      "at": "PyCon Belarus 2019, Minsk",
+      "links": [
+        "https://www.youtube.com/watch?v=YErAfIWC0wk"
+      ]
+    }
+  ]
+}
